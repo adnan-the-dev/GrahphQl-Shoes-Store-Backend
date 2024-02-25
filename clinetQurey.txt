@@ -1,0 +1,114 @@
+-----------GET ALL USERS----------------
+query getAllUsers{
+  users{
+    _id
+    username
+    password
+    email
+    state
+    street
+    city
+    country
+    password
+  }
+}
+
+-----------GET ALL SHOESPRODUCTS----------------
+query getAllShoesProducts{
+  shoesProduct{
+    productname
+    mindetail
+    fulldetail
+    catagory
+    price
+    qunty
+    pay
+    sizes
+    images
+  }
+}
+-----------GET SINGLE PRODUCT BY ID------------
+query getProductById{
+  singleProduct(_id:"4"){
+    productname
+    mindetail
+    fulldetail
+    catagory
+    pay
+    price
+    images
+    sizes
+  }
+}
+-----------------------------
+query getProductById($prodcutid:ID!){
+  singleProduct(_id:$prodcutid){
+    productname
+    mindetail
+    fulldetail
+    catagory
+    pay
+    price
+    images
+    sizes
+  }
+}
+"prodcutid":"4"
+
+-------------SING UP USERS-------------------
+
+mutation createUser($userNew:UserInput!){
+  user:singUpUser(userNew:$userNew){
+    _id
+    username
+    password
+    email
+    postalCode
+    isAdmin
+    street
+    city
+    state
+    country
+  }
+}
+  "userNew": {
+    "username": "ali",
+    "password": "applerew",
+    "email": "ali23@gmail.com",
+    "isAdmin": "false",
+    "street": "4",
+    "city": "lahore",
+    "country": "mulatan",
+    "postalCode": "38000",
+    "state": "5457"
+  }
+-------------LOIGN USER-----------
+mutation loginUser($login:LoginUserInput!){
+  user:loginUser(userLogin:$login){
+   token
+  }
+}
+
+ "login": {
+    "email": "ali23@gmail.com",
+    "password": "applerew"
+  }
+
+  --------------GET ALL ORDERS-------------
+
+  query getAllOrders{
+  allOrders{
+    userName
+    userId
+    subTotal
+    status
+    items{
+      _id
+      quantity
+      size
+      itemPrice
+      itemImage
+      itemName
+    }
+  }
+}
