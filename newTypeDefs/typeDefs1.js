@@ -30,7 +30,6 @@ const typeDefs = gql`
     username: String
     password: String
     email: String
-    isAdmin: String
     street: String
     city: String
     state: String
@@ -64,7 +63,6 @@ const typeDefs = gql`
     username: String!
     password: String!
     email: String!
-    isAdmin: String!
     street: String!
     city: String!
     state: String!

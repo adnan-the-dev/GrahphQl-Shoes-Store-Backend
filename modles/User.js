@@ -19,10 +19,10 @@ const userSchema = new mongoose.Schema({
         require: true,
         unique: true
     },
-    isAdmin: {
-        type: Boolean,
-        default: false
-    },
+    // isAdmin: {
+    //     type: Boolean,
+    //     default: false
+    // },
     street: {
         type: String,
         require: true,
