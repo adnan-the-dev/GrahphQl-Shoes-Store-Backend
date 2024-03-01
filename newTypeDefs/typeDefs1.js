@@ -17,7 +17,7 @@ const typeDefs = gql`
   }
 
   type itemInput {
-    _id: ID
+    itemId:String
     quantity: String
     size: String
     itemPrice: String
@@ -58,6 +58,7 @@ const typeDefs = gql`
   type Mutation {
     singUpUser(userNew: UserInput!): User
     loginUser(userLogin: LoginUserInput!): Token
+    placeOrder(orderPlace:PlaceOrderInput!):Order
   }
 
   input UserInput {
@@ -73,6 +74,23 @@ const typeDefs = gql`
   input LoginUserInput {
     password: String!
     email: String!
+  }
+
+  input PlaceOrderInput {
+    userName: String
+    userId: String
+    subTotal: String
+    status: String
+    items: [item]
+  }
+
+  input item {
+    itemId: String
+    quantity: String
+    size: String
+    itemPrice: String
+    itemImage: String
+    itemName: String
   }
 `;
 

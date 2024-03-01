@@ -76,8 +76,15 @@ const resolvers = {
         throw new Error("The password provided is incorrect.");
       }
       const token = jwt.sign({ userId: user._id }, JWT_SECRET);
-      return { token ,user};
+      return { token, user };
     },
+
+    placeOrder: async (_, { orderPlace }) => {
+      const order = new Orders({
+        ...orderPlace
+      });
+      return await order.save();
+    }
   },
 };
 
