@@ -24,7 +24,7 @@ const resolvers = {
       return product;
     },
 
-    singleProduct: async (_, { _id }) => {
+    singleProd: async (_, { _id }) => {
       try {
         const product = await AddiasProduct.findById({ _id: _id });
         return product;
@@ -76,7 +76,7 @@ const resolvers = {
         throw new Error("The password provided is incorrect.");
       }
       const token = jwt.sign({ userId: user._id }, JWT_SECRET);
-      return { token };
+      return { token ,user};
     },
   },
 };

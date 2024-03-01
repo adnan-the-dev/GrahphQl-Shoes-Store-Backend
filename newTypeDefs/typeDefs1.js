@@ -5,7 +5,7 @@ const typeDefs = gql`
     users: [User]
     allOrders: [Order]
     allShoesProduct: [ShoesProduct]
-    singleProduct(_id: ID!): ShoesProduct
+    singleProd(_id: ID!): ShoesProduct
   }
 
   type Order {
@@ -52,6 +52,7 @@ const typeDefs = gql`
 
   type Token {
     token: String
+    user:User!
   }
 
   type Mutation {
